@@ -3,18 +3,18 @@ import type { BlogConfig } from './src/types/config';
 /** Frequent identity, copy and content settings come first; optional services follow reading defaults. */
 const config: BlogConfig = {
   site: {
-    title: 'BlogGPT',
-    baseUrl: 'https://example.com/', // Include the deployment directory, e.g. https://example.com/blog/.
-    defaultLocale: 'zh',
-    locales: ['zh', 'en'],
+    title: 'Living Life',
+    baseUrl: 'https://blogGPT.paulapplegate.com/', // Include the deployment directory, e.g. https://example.com/blog/.
+    defaultLocale: 'en',
+    locales: ['en', 'zh'],
     localePrefixPolicy: 'redirect-to-default', // Recommended: unprefixed pages refresh directly to the default language.
-    timezone: 'Asia/Shanghai',
+    timezone: 'America/New_York',
   },
   author: {
-    name: 'Astro Theme BlogGPT',
+    name: 'Paul Applegate',
     bio: {
       zh: '欢迎来到 BlogGPT 主题演示站点！',
-      en: 'Welcome to the BlogGPT theme demo site!',
+      en: 'Living Life',
     },
     avatar: '/images/avatar.webp',
     socials: [
