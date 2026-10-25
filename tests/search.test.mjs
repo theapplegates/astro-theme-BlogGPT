@@ -9,13 +9,13 @@ import { contextSnippets } from '../src/lib/search-context.ts';
 import { parse } from 'parse5';
 
 test('rendered paragraphs have unique destinations without replacing author IDs or indexing hidden content', () => {
-  const html = `<html lang="zh"><head><link rel="canonical" href="https://example.com/zh/posts/test/"></head><body><nav><p>Navigation</p></nav><span id="search-paragraph-1"></span><main><article data-search-record="posts" data-search-title="搜索"><div class="article-content" data-search-content><h2 id="section">章节搜索</h2><p>第一段搜索 <a href="https://example.org/">链接</a></p><p id="custom">第二段搜索</p><ul><li><p>列表搜索</p><ul><li>嵌套搜索</li></ul></li></ul><aside data-pagefind-ignore><p>Hidden search</p></aside><pre><code>code search</code></pre></div></article></main></body></html>`;
+  const html = `<html lang="zh"><head><link rel="canonical" href="https://blogGPT.paulapplegate.com/zh/posts/test/"></head><body><nav><p>Navigation</p></nav><span id="search-paragraph-1"></span><main><article data-search-record="posts" data-search-title="搜索"><div class="article-content" data-search-content><h2 id="section">章节搜索</h2><p>第一段搜索 <a href="https://example.org/">链接</a></p><p id="custom">第二段搜索</p><ul><li><p>列表搜索</p><ul><li>嵌套搜索</li></ul></li></ul><aside data-pagefind-ignore><p>Hidden search</p></aside><pre><code>code search</code></pre></div></article></main></body></html>`;
   const rendered = contentUrls(
     html,
-    new URL('https://example.com/zh/posts/test/'),
+    new URL('https://blogGPT.paulapplegate.com/zh/posts/test/'),
   );
   assert.equal(
-    contentUrls(rendered, new URL('https://example.com/zh/posts/test/')),
+    contentUrls(rendered, new URL('https://blogGPT.paulapplegate.com/zh/posts/test/')),
     rendered,
     'Anchoring must be idempotent',
   );
@@ -248,7 +248,7 @@ test('search scopes separate post title/description/body and exclude other conte
 });
 
 test('rendered index extraction ignores navigation, share dialogs, title metadata and hidden script text in body', () => {
-  const html = `<html lang="zh-CN"><head><link rel="canonical" href="https://example.com/blog/zh/about/"></head><body><nav>Noise</nav><article data-search-record="pages" data-search-title="A &amp; B" data-search-description="Description"><h1>Title</h1><div data-search-content><p>Rendered <strong>MDX</strong></p><p>Next paragraph</p><script>Secret</script><span data-pagefind-ignore>Ignore</span></div><section>Share dialog</section></article></body></html>`;
+  const html = `<html lang="zh-CN"><head><link rel="canonical" href="https://blogGPT.paulapplegate.com/blog/zh/about/"></head><body><nav>Noise</nav><article data-search-record="pages" data-search-title="A &amp; B" data-search-description="Description"><h1>Title</h1><div data-search-content><p>Rendered <strong>MDX</strong></p><p>Next paragraph</p><script>Secret</script><span data-pagefind-ignore>Ignore</span></div><section>Share dialog</section></article></body></html>`;
   assert.deepEqual(searchRecords(html), [
     {
       url: '/blog/zh/about/',

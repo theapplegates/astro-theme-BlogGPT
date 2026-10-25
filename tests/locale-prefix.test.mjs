@@ -94,15 +94,15 @@ test('default redirect aliases refresh directly to generated final pages and sta
     const final = await readFile(`dist${target}index.html`, 'utf8');
     assert.doesNotMatch(final, /http-equiv="refresh"/);
     assert.ok(
-      final.includes(`rel="canonical" href="https://example.com${target}"`),
+      final.includes(`rel="canonical" href="https://blogGPT.paulapplegate.com${target}"`),
     );
     assert.equal(
-      sitemap.includes(`<loc>https://example.com/${route}</loc>`),
+      sitemap.includes(`<loc>https://blogGPT.paulapplegate.com/${route}</loc>`),
       false,
     );
   }
   assert.ok(
-    sitemap.includes('<loc>https://example.com/zh/posts/design/</loc>'),
+    sitemap.includes('<loc>https://blogGPT.paulapplegate.com/zh/posts/design/</loc>'),
   );
   await access('dist/en/posts/design/index.html');
 });

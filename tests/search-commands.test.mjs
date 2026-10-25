@@ -82,7 +82,7 @@ function browser(home = false, options = {}) {
     innerWidth: 1440,
     navigator: { platform: 'Win32' },
     localStorage: { getItem: () => null, setItem() {} },
-    location: { href: 'https://example.com/en/search/', search: '' },
+    location: { href: 'https://blogGPT.paulapplegate.com/en/search/', search: '' },
     history: { replaceState() {} },
     fetch: options.fetch,
     AbortController,

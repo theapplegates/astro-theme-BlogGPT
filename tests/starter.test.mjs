@@ -112,7 +112,7 @@ test('starter export is minimal, deterministic, independently configured and lea
     }
   });
   for (const [index, values, expected] of [
-    [0, {}, 'https://example.com/'],
+    [0, {}, 'https://blogGPT.paulapplegate.com/'],
     [
       1,
       { VERCEL_PROJECT_PRODUCTION_URL: 'my-blog.vercel.app' },
@@ -122,11 +122,11 @@ test('starter export is minimal, deterministic, independently configured and lea
     [
       3,
       {
-        SITE_URL: 'https://blog.example.com/sub/',
+        SITE_URL: 'https://blog.blogGPT.paulapplegate.com/sub/',
         VERCEL_PROJECT_PRODUCTION_URL: 'my-blog.vercel.app',
         URL: 'https://my-blog.netlify.app',
       },
-      'https://blog.example.com/sub/',
+      'https://blog.blogGPT.paulapplegate.com/sub/',
     ],
   ]) {
     for (const key of environment) delete process.env[key];

@@ -27,15 +27,15 @@ You can set this in `blog.config.ts`:
 ```ts
 export default {
   site: {
-    baseUrl: 'https://blog.example.com',
+    baseUrl: 'https://blog.blogGPT.paulapplegate.com',
     // ...
   },
 };
 ```
 
-With the default starter configuration, you can also set `SITE_URL` in your hosting dashboard, for example `SITE_URL=https://blog.example.com`. The starter reads it first, then falls back to the Vercel production domain or Netlify site URL. Set `SITE_URL` and rebuild after adding a custom domain. The main theme repository does not read this variable; edit `site.baseUrl` directly when using that repository or a fixed URL in your configuration.
+With the default starter configuration, you can also set `SITE_URL` in your hosting dashboard, for example `SITE_URL=https://blog.blogGPT.paulapplegate.com`. The starter reads it first, then falls back to the Vercel production domain or Netlify site URL. Set `SITE_URL` and rebuild after adding a custom domain. The main theme repository does not read this variable; edit `site.baseUrl` directly when using that repository or a fixed URL in your configuration.
 
-> **Subpath deployments:** Addresses such as `https://example.com/blog/` are supported. Set `site.baseUrl` to the complete URL, including the deployment directory, so routes and asset paths use the correct base.
+> **Subpath deployments:** Addresses such as `https://blogGPT.paulapplegate.com/blog/` are supported. Set `site.baseUrl` to the complete URL, including the deployment directory, so routes and asset paths use the correct base.
 
 ## Build Check
 

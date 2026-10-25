@@ -66,6 +66,6 @@ pnpm build
 pnpm preview
 ```
 
-You can deploy the generated `dist/` folder to **Vercel**, **Netlify**, **Cloudflare Pages**, **GitHub Pages**, or any static hosting service. The starter reads `SITE_URL` first, then the Vercel production domain or Netlify site URL, and uses `https://example.com/` for local builds. For a custom domain, set `SITE_URL` and rebuild, or replace `site.baseUrl` in `blog.config.ts` with a fixed URL. See the [Deployment Guide](https://bloggpt.reincarnatey.net/en/guide/deployment) for details.
+You can deploy the generated `dist/` folder to **Vercel**, **Netlify**, **Cloudflare Pages**, **GitHub Pages**, or any static hosting service. The starter reads `SITE_URL` first, then the Vercel production domain or Netlify site URL, and uses `https://blogGPT.paulapplegate.com/` for local builds. For a custom domain, set `SITE_URL` and rebuild, or replace `site.baseUrl` in `blog.config.ts` with a fixed URL. See the [Deployment Guide](https://bloggpt.reincarnatey.net/en/guide/deployment) for details.
 
 Theme code: [Apache-2.0](LICENSE). See [third-party notices](THIRD_PARTY_NOTICES.md).

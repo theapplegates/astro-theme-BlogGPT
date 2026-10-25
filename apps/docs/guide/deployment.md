@@ -27,15 +27,15 @@ BlogGPT 在构建后会输出纯静态的 HTML、CSS 与 JavaScript 文件（位
 ```ts
 export default {
   site: {
-    baseUrl: 'https://blog.example.com',
+    baseUrl: 'https://blog.blogGPT.paulapplegate.com',
     // ...
   },
 };
 ```
 
-如果使用 Starter 默认配置，也可以在托管平台中设置 `SITE_URL`（例如 `SITE_URL=https://blog.example.com`）。模板优先读取该变量，其次使用 Vercel 生产域名或 Netlify 站点地址。绑定自定义域名后，请设置 `SITE_URL` 并重新构建。主仓库的 `blog.config.ts` 不读取这个环境变量，使用主仓库或已改为固定 `baseUrl` 时，请直接修改配置。
+如果使用 Starter 默认配置，也可以在托管平台中设置 `SITE_URL`（例如 `SITE_URL=https://blog.blogGPT.paulapplegate.com`）。模板优先读取该变量，其次使用 Vercel 生产域名或 Netlify 站点地址。绑定自定义域名后，请设置 `SITE_URL` 并重新构建。主仓库的 `blog.config.ts` 不读取这个环境变量，使用主仓库或已改为固定 `baseUrl` 时，请直接修改配置。
 
-> **子路径部署：** 支持 `https://example.com/blog/` 这样的地址。请将完整地址（含部署子目录）写入 `site.baseUrl`，主题会据此生成路由与资源路径。
+> **子路径部署：** 支持 `https://blogGPT.paulapplegate.com/blog/` 这样的地址。请将完整地址（含部署子目录）写入 `site.baseUrl`，主题会据此生成路由与资源路径。
 
 ## 构建检查
 

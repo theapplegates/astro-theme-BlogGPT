@@ -35,7 +35,7 @@ test('copy templates preserve text while share links encode each placeholder exa
     description: 'Two lines\nSecond',
     author: 'Alex',
     blog: 'BlogGPT',
-    url: 'https://example.com/你好/?a=1&b=2',
+    url: 'https://blogGPT.paulapplegate.com/你好/?a=1&b=2',
     image: '',
     text: 'Share me',
   };
@@ -44,7 +44,7 @@ test('copy templates preserve text while share links encode each placeholder exa
     `${values.title}\n${values.description}\nAlex · BlogGPT\n${values.url}`,
   );
   const url = new URL(
-    shareHref('https://example.com/share?title={title}&url={url}', values),
+    shareHref('https://blogGPT.paulapplegate.com/share?title={title}&url={url}', values),
   );
   assert.equal(url.searchParams.get('title'), values.title);
   assert.equal(url.searchParams.get('url'), values.url);

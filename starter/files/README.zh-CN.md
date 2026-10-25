@@ -66,6 +66,6 @@ pnpm build
 pnpm preview
 ```
 
-你可以将构建生成的 `dist/` 目录直接部署到 **Vercel**、**Netlify**、**Cloudflare Pages** 或 **GitHub Pages**。模板优先读取 `SITE_URL`，其次使用 Vercel 生产域名或 Netlify 站点地址；本地构建回退到 `https://example.com/`。绑定自定义域名后，请设置 `SITE_URL` 并重新构建，或在 `blog.config.ts` 中把 `site.baseUrl` 改成固定地址。详细步骤请参阅[构建与部署指南](https://bloggpt.reincarnatey.net/guide/deployment)。
+你可以将构建生成的 `dist/` 目录直接部署到 **Vercel**、**Netlify**、**Cloudflare Pages** 或 **GitHub Pages**。模板优先读取 `SITE_URL`，其次使用 Vercel 生产域名或 Netlify 站点地址；本地构建回退到 `https://blogGPT.paulapplegate.com/`。绑定自定义域名后，请设置 `SITE_URL` 并重新构建，或在 `blog.config.ts` 中把 `site.baseUrl` 改成固定地址。详细步骤请参阅[构建与部署指南](https://bloggpt.reincarnatey.net/guide/deployment)。
 
 主题代码采用 [Apache-2.0](LICENSE)，资源与依赖的许可信息见[第三方声明](THIRD_PARTY_NOTICES.md)。

@@ -37,7 +37,7 @@ export default {
   // 1. 站点信息与多语言
   site: {
     title: { zh: '我的博客', en: 'My Blog' }, // Localized（必填）
-    baseUrl: 'https://example.com', // 正式环境的完整域名
+    baseUrl: 'https://blogGPT.paulapplegate.com', // 正式环境的完整域名
     defaultLocale: 'zh', // 默认语言代码
     locales: ['zh', 'en'], // 启用的语言代码列表
     localePrefixPolicy: 'redirect-to-default', // 'redirect-to-default' | 'omit-default-prefix' | 'require-prefix'

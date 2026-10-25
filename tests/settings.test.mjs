@@ -218,7 +218,7 @@ test('footer year ranges, leap days, timezone boundaries, and body character cou
   assert.throws(() => footerPeriod('2026-02-31'));
   assert.equal(
     characterCount(
-      '# 中文 ABC\n[链接](https://example.com)\n```js\nignored\n```',
+      '# 中文 ABC\n[链接](https://blogGPT.paulapplegate.com)\n```js\nignored\n```',
     ),
     7,
   );

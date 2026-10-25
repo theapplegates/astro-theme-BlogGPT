@@ -43,9 +43,9 @@ test('build checks final relative content destinations, resources and anchors un
     <a href="?mode=print#here">Query</a>
     <img src="./cover.webp" srcset="./cover.webp 1x, ./big.webp 2x">
     <a href="./download.zip?download=1">Download</a><a href="./demo.html#demo">HTML attachment</a>
-    <a href="https://example.com/missing/">Absolute URL excluded</a>
+    <a href="https://blogGPT.paulapplegate.com/missing/">Absolute URL excluded</a>
     <a href="//cdn.invalid/missing">Remote</a><img src="data:image/png;base64,AA==">
-    <a href="mailto:hello@example.com">Mail</a>
+    <a href="mailto:hello@blogGPT.paulapplegate.com">Mail</a>
     <script>const example = '<a href="script-missing/">';</script>
     <script type="module" src="./demo.mjs"></script>
     <script type="module" src="./missing-module.mjs"></script>
@@ -57,13 +57,13 @@ test('build checks final relative content destinations, resources and anchors un
     <source srcset="\n ./missing-first.webp .5x,\n ./big.webp 2x">
     <a href="/zh/about/">Missing base</a><a href="./%ZZ">Malformed</a>
   </div></main>`;
-  const page = new URL('https://example.com/blog/zh/posts/2026/start/');
+  const page = new URL('https://blogGPT.paulapplegate.com/blog/zh/posts/2026/start/');
   // Verify both authored HTML and the URL normalization used for client navigation.
   for (const rendered of [html, contentUrls(html, page)]) {
     await put('zh/posts/2026/start/index.html', rendered);
     const warnings = await checkRelativeLinks(
       root,
-      'https://example.com/blog/',
+      'https://blogGPT.paulapplegate.com/blog/',
     );
     assert.equal(warnings.length, 11);
     for (const destination of ['missing-module.mjs', 'missing-action/'])
@@ -94,7 +94,7 @@ test('build checks final relative content destinations, resources and anchors un
     );
   }
   const logged = [];
-  await relativeLinks('https://example.com/blog/').hooks['astro:build:done']({
+  await relativeLinks('https://blogGPT.paulapplegate.com/blog/').hooks['astro:build:done']({
     dir: pathToFileURL(`${root}${path.sep}`),
     logger: { warn: (message) => logged.push(message) },
   });

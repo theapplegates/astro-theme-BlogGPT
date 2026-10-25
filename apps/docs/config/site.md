@@ -7,7 +7,7 @@
 | 配置项                    | 类型                                                                 | 默认值                  | 说明                                                                                                    |
 | ------------------------- | -------------------------------------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------- |
 | `site.title`              | `Localized`                                                          | _(必填)_                | 博客名称，显示在浏览器标签页、侧边栏顶部以及 RSS 订阅源中。                                             |
-| `site.baseUrl`            | `string`                                                             | _(必填)_                | 线上正式域名（如 `'https://blog.example.com'`），用于生成 Canonical 链接、Sitemap、RSS 与分享卡片地址。 |
+| `site.baseUrl`            | `string`                                                             | _(必填)_                | 线上正式域名（如 `'https://blog.blogGPT.paulapplegate.com'`），用于生成 Canonical 链接、Sitemap、RSS 与分享卡片地址。 |
 | `site.defaultLocale`      | `string`                                                             | `'zh'`                  | 站点默认语言代码。                                                                                      |
 | `site.locales`            | `string[]`                                                           | `['zh', 'en']`          | 站点启用的语言列表。                                                                                    |
 | `site.localePrefixPolicy` | `'redirect-to-default' \| 'omit-default-prefix' \| 'require-prefix'` | `'redirect-to-default'` | 多语言 URL 前缀策略。详见[语言与多语言内容](../content/languages.md)。                                  |

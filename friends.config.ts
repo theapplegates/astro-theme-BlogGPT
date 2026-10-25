@@ -8,8 +8,8 @@ const friends: FriendsConfig = [
       en: 'Example sites',
     },
     description: {
-      zh: '以下站点均为虚构样本，网址使用 example.com 占位。',
-      en: 'Fictional samples with example.com placeholder URLs.',
+      zh: '以下站点均为虚构样本，网址使用 blogGPT.paulapplegate.com 占位。',
+      en: 'Fictional samples with blogGPT.paulapplegate.com placeholder URLs.',
     },
     links: [
       {
@@ -18,7 +18,7 @@ const friends: FriendsConfig = [
           zh: '一个展示作品集的虚构站点。',
           en: 'A fictional portfolio site.',
         },
-        url: 'https://example.com/alpha',
+        url: 'https://blogGPT.paulapplegate.com/alpha',
         avatar: '/images/covers/poolside.webp',
       },
       {
@@ -27,7 +27,7 @@ const friends: FriendsConfig = [
           zh: '一个用于展示长文阅读的虚构站点。',
           en: 'A fictional long-form journal.',
         },
-        url: 'https://example.com/beta',
+        url: 'https://blogGPT.paulapplegate.com/beta',
         avatar: '/images/illustrations/blue-flow.webp',
       },
       {
@@ -36,7 +36,7 @@ const friends: FriendsConfig = [
           zh: '一个用于整理知识卡片的虚构站点。',
           en: 'A fictional collection of knowledge notes.',
         },
-        url: 'https://example.com/gamma',
+        url: 'https://blogGPT.paulapplegate.com/gamma',
         avatar: '/images/covers/emerald-night.webp',
       },
     ],

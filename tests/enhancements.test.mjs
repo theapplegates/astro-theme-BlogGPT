@@ -68,7 +68,7 @@ test('share cards are real PNG files, use one canonical social image, and respec
     assert.match(
       html,
       new RegExp(
-        `property="og:image" content="https://example.com/${lang}/og/article-enhancements.png"`,
+        `property="og:image" content="https://blogGPT.paulapplegate.com/${lang}/og/article-enhancements.png"`,
       ),
     );
     assert.equal((html.match(/name="twitter:card"/g) ?? []).length, 1);

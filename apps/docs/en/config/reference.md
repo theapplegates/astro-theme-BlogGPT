@@ -37,7 +37,7 @@ export default {
   // 1. Site Metadata & i18n
   site: {
     title: { zh: '我的博客', en: 'My Blog' }, // Localized (Required)
-    baseUrl: 'https://example.com', // Canonical production URL
+    baseUrl: 'https://blogGPT.paulapplegate.com', // Canonical production URL
     defaultLocale: 'zh', // Primary locale code
     locales: ['zh', 'en'], // Enabled locale codes
     localePrefixPolicy: 'redirect-to-default', // 'redirect-to-default' | 'omit-default-prefix' | 'require-prefix'

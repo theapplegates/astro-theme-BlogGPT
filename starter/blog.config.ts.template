@@ -6,7 +6,7 @@ const deploymentUrl =
   (process.env.VERCEL_PROJECT_PRODUCTION_URL
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
     : process.env.URL) ||
-  'https://example.com/';
+  'https://blogGPT.paulapplegate.com/';
 
 const config: BlogConfig = {
   site: {

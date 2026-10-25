@@ -125,7 +125,7 @@ test('built indexes return no other-language results when the current locale has
       await mkdir(directory, { recursive: true });
       await writeFile(
         path.join(directory, 'index.html'),
-        `<html lang="${locale}"><head><link rel="canonical" href="https://example.com/blog/${locale}/${kind}/visible/"></head><body data-locale="${locale}"><article data-search-record="${kind}" data-search-title="visibilityneedle"><div data-search-content><p>visibilityneedle</p></div></article></body></html>`,
+        `<html lang="${locale}"><head><link rel="canonical" href="https://blogGPT.paulapplegate.com/blog/${locale}/${kind}/visible/"></head><body data-locale="${locale}"><article data-search-record="${kind}" data-search-title="visibilityneedle"><div data-search-content><p>visibilityneedle</p></div></article></body></html>`,
       );
     }
     const build = spawnSync(

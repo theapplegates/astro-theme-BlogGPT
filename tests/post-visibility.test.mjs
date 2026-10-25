@@ -183,7 +183,7 @@ export default config;`,
               path.join(root, 'dist', route.slice(base.length), 'index.html'),
             );
             assert.ok(
-              sitemap.includes(`<loc>https://example.com/${route}</loc>`),
+              sitemap.includes(`<loc>https://blogGPT.paulapplegate.com/${route}</loc>`),
               route,
             );
             const html = await output(`${route.slice(base.length)}index.html`);
@@ -198,11 +198,11 @@ export default config;`,
               assert.equal((html.match(/class="tag"/g) ?? []).length, 1, route);
           }
         assert.ok(
-          !sitemap.includes(`<loc>https://example.com/${prefix}search/</loc>`),
+          !sitemap.includes(`<loc>https://blogGPT.paulapplegate.com/${prefix}search/</loc>`),
         );
       }
       assert.ok(
-        !sitemap.includes(`<loc>https://example.com/${base}404/</loc>`),
+        !sitemap.includes(`<loc>https://blogGPT.paulapplegate.com/${base}404/</loc>`),
       );
     };
     await assertSitemap();
@@ -509,7 +509,7 @@ export default config;`,
         .replace("'omit-default-prefix'", "'redirect-to-default'")
         .replace(
           'export default config;',
-          "config.site.baseUrl = 'https://example.com/blog/';\nexport default config;",
+          "config.site.baseUrl = 'https://blogGPT.paulapplegate.com/blog/';\nexport default config;",
         ),
     );
     const subdirectory = await build();

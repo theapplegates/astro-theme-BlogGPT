@@ -229,7 +229,7 @@ test('content URLs follow the final page path without migrating author article l
   const result = contentUrls(
     '<main><div class="article-content"><a href="../older/?q=test#section">Older</a><a href="/blog/pt-BR/posts/older/">Old path</a><a href="#here">Here</a><img src="./cover.webp"><a href="./download.zip">Download</a></div></main>',
     new URL('https://preview.test/blog/pt-BR/posts/2026/start/'),
-    new URL('https://example.com'),
+    new URL('https://blogGPT.paulapplegate.com'),
   );
   assert.ok(result.includes('/blog/pt-BR/posts/2026/older/?q=test#section'));
   assert.ok(result.includes('href="/blog/pt-BR/posts/older/"'));

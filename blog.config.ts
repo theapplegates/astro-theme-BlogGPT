@@ -4,9 +4,9 @@ import type { BlogConfig } from './src/types/config';
 const config: BlogConfig = {
   site: {
     title: 'Living Life',
-    baseUrl: 'https://blogGPT.paulapplegate.com/', // Include the deployment directory, e.g. https://example.com/blog/.
+    baseUrl: 'https://blogGPT.paulapplegate.com/', // Include the deployment directory, e.g. https://blogGPT.paulapplegate.com/blog/.
     defaultLocale: 'en',
-    locales: ['en', 'zh'],
+    locales: ['en'],
     localePrefixPolicy: 'redirect-to-default', // Recommended: unprefixed pages refresh directly to the default language.
     timezone: 'America/New_York',
   },
@@ -21,12 +21,12 @@ const config: BlogConfig = {
       {
         label: 'GitHub',
         icon: 'simple-icons:github',
-        href: 'https://example.com/social/github',
+        href: 'https://blogGPT.paulapplegate.com/social/github',
       },
       {
         label: 'YouTube',
         icon: 'simple-icons:youtube',
-        href: 'https://example.com/social/video',
+        href: 'https://blogGPT.paulapplegate.com/social/video',
       },
       {
         label: {
@@ -34,7 +34,7 @@ const config: BlogConfig = {
           en: 'Email',
         },
         icon: 'lucide:mail',
-        href: 'mailto:hello@example.com',
+        href: 'mailto:hello@blogGPT.paulapplegate.com',
       },
     ],
   },

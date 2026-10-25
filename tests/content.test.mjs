@@ -113,7 +113,7 @@ test('development bundle middleware serves JavaScript modules with an executable
   for (const name of ['demo.mjs', 'upper.MJS', 'legacy.js', 'unknown.bin'])
     await put(root, `content/posts/modules/${name}`, body);
   const settings = structuredClone(config);
-  settings.site.baseUrl = 'https://example.com/blog/';
+  settings.site.baseUrl = 'https://blogGPT.paulapplegate.com/blog/';
   const integration = contentBundles(settings);
   await integration.hooks['astro:config:done']({
     config: { root: pathToFileURL(root + path.sep) },
@@ -530,7 +530,7 @@ test('rendered relative URLs honor the destination route and base without changi
   const html = `<html><head><script>const x='<img src="./leave.js">';</script></head><body><a href="./outside">outside</a><main><img src='./cover.svg'><video src="clip.mp4" poster="./poster.png"></video><a href="./download.zip?a=1&amp;b=2">download</a><a href="#heading">anchor</a><img src="https://example.org/a.png"><source srcset="./small.png 1x, ./large.png 2x"><script>const y='<img src="./also-leave.js">';</script><img src="data:image/png;base64,AA=="></main></body></html>`;
   const result = contentUrls(
     html,
-    new URL('https://example.com/blog/en/posts/my-story/'),
+    new URL('https://blogGPT.paulapplegate.com/blog/en/posts/my-story/'),
   );
   assert.ok(result.includes('src="/blog/en/posts/my-story/cover.svg"'));
   assert.ok(result.includes('src="/blog/en/posts/my-story/clip.mp4"'));
@@ -557,13 +557,13 @@ test('rendered relative URLs honor the destination route and base without changi
 test('content links only mark external HTTP URLs, comparing the configured site even in local preview', async () => {
   const { contentUrls } = await import('../src/lib/content-urls.ts');
   const result = contentUrls(
-    '<main><div class="article-content"><a href="https://astro.build/">external</a><a href="//astro.build/docs">protocol-relative</a><a href="https://example.com/zh/">internal absolute</a><a href="../local/">internal relative</a><a href="#heading">anchor</a><a href="mailto:demo@example.com">email</a></div><a href="https://astro.build/">UI</a></main>',
+    '<main><div class="article-content"><a href="https://astro.build/">external</a><a href="//astro.build/docs">protocol-relative</a><a href="https://blogGPT.paulapplegate.com/zh/">internal absolute</a><a href="../local/">internal relative</a><a href="#heading">anchor</a><a href="mailto:demo@blogGPT.paulapplegate.com">email</a></div><a href="https://astro.build/">UI</a></main>',
     new URL('http://localhost:4322/zh/posts/demo/'),
-    new URL('https://example.com'),
+    new URL('https://blogGPT.paulapplegate.com'),
   );
   assert.equal((result.match(/data-external/g) ?? []).length, 2);
-  assert.ok(result.includes('href="https://example.com/zh/">'));
-  assert.ok(result.includes('href="mailto:demo@example.com">'));
+  assert.ok(result.includes('href="https://blogGPT.paulapplegate.com/zh/">'));
+  assert.ok(result.includes('href="mailto:demo@blogGPT.paulapplegate.com">'));
 });
 
 test('URL classification ignores surrounding ASCII whitespace without changing absolute targets', async () => {
@@ -572,7 +572,7 @@ test('URL classification ignores surrounding ASCII whitespace without changing a
     'href=" https://external.test/docs "',
     'href="\t//external.test/docs\n"',
     'src="\nhttps://cdn.test/a.png\n"',
-    'href=" mailto:demo@example.com "',
+    'href=" mailto:demo@blogGPT.paulapplegate.com "',
     'href=" #heading "',
     'href=" /root/path "',
     'src=" data:image/png;base64,AA== "',
@@ -580,7 +580,7 @@ test('URL classification ignores surrounding ASCII whitespace without changing a
   ];
   const result = contentUrls(
     `<main><div class="article-content">${attributes.map((attribute) => `<${attribute.startsWith('src') ? 'img' : 'a'} ${attribute}>`).join('')}<a href=" \t./download.zip?x=1&amp;y=2\n ">download</a></div></main>`,
-    new URL('https://example.com/blog/en/posts/story/'),
+    new URL('https://blogGPT.paulapplegate.com/blog/en/posts/story/'),
   );
   for (const attribute of attributes)
     assert.ok(result.includes(attribute), attribute);
@@ -609,7 +609,7 @@ test('srcset resolves every multiline candidate and preserves remote URLs and de
   );
   const result = contentUrls(
     `<main><img srcset="${value}"></main>`,
-    new URL('https://example.com/blog/posts/story/'),
+    new URL('https://blogGPT.paulapplegate.com/blog/posts/story/'),
   );
   assert.ok(
     result.includes(

@@ -79,7 +79,7 @@ function browser({ deferCopy = false } = {}) {
   const window = new EventTarget();
   window.document = document;
   window.onscrollend = null;
-  const location = new URL('https://example.com/en/posts/current/');
+  const location = new URL('https://blogGPT.paulapplegate.com/en/posts/current/');
   const history = {
     state: { index: 0, scrollX: 0, scrollY: 0 },
     replaceState(state, title, url) {
