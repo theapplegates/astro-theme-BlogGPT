@@ -2,14 +2,14 @@ import type { BlogConfig } from './src/types/config';
 
 /** Frequent identity, copy and content settings come first; optional services follow reading defaults. */
 const config: BlogConfig = {
-  site: {
-    title: 'Living Life',
-    baseUrl: 'https://blogGPT.paulapplegate.com/', // Include the deployment directory, e.g. https://blogGPT.paulapplegate.com/blog/.
-    defaultLocale: 'en',
-    locales: ['en'],
-    localePrefixPolicy: 'redirect-to-default', // Recommended: unprefixed pages refresh directly to the default language.
-    timezone: 'America/New_York',
-  },
+site: {
+  title: 'Living Life',
+  baseUrl: 'https://blogGPT.paulapplegate.com/',
+  defaultLocale: 'en',
+  locales: ['en'],
+  localePrefixPolicy: 'omit-default-prefix',
+  timezone: 'America/New_York',
+},
   author: {
     name: 'Paul Applegate',
     bio: {
