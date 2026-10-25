@@ -1,3 +1,4 @@
+
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
@@ -5,19 +6,21 @@ import tailwindcss from '@tailwindcss/vite';
 import icon from 'astro-icon';
 import expressiveCode from 'astro-expressive-code';
 import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers';
+
 import config from './src/lib/config';
 import contentBundles from './src/integrations/content-bundles';
 import localeRoutes from './src/integrations/locale-routes';
 import relativeLinks from './src/integrations/relative-links';
 import { hasLocalePrefix, localeHref } from './src/lib/locale-routing';
+
 import remarkMath from 'remark-math';
 import rehypeMath from './src/plugins/rehype-math';
 import remarkCallouts from './src/plugins/remark-callouts';
-import { unified, type RemarkPlugins } from '@astrojs/markdown-remark';
-import rehypeCloudinaryPicture from "./src/plugins/rehype-cloudinary-picture.mjs";
+import type { RemarkPlugins } from '@astrojs/markdown-remark';
+import rehypeCloudinaryPicture from './src/plugins/rehype-cloudinary-picture.mjs';
 
-// Parse TeX even when rendering is disabled so MDX never treats formula braces
-// as JavaScript expressions. Without KaTeX it falls back to source code.
+// Parse TeX even when rendering is disabled so MDX never
+// treats formula braces as JavaScript expressions.
 const remarkPlugins: RemarkPlugins = [
   remarkMath,
   [
@@ -29,6 +32,7 @@ const remarkPlugins: RemarkPlugins = [
     },
   ],
 ];
+
 const excludedSitemapPaths = new Set([
   `${config.site.base}404/`,
   `${config.site.base}404.html`,
@@ -42,15 +46,29 @@ export default defineConfig({
   base: config.site.base,
   output: 'static',
   trailingSlash: 'always',
+
   markdown: {
-    processor: unified({
-      remarkPlugins,
-      rehypePlugins: [[rehypeMath, { enabled: config.article.math }]],
-    }),
+    remarkPlugins,
+    rehypePlugins: [
+      [
+        rehypeCloudinaryPicture,
+        {
+          cloudName: process.env.PUBLIC_CLOUDINARY_CLOUD_NAME,
+        },
+      ],
+      [
+        rehypeMath,
+        {
+          enabled: config.article.math,
+        },
+      ],
+    ],
   },
+
   integrations: [
     localeRoutes(config),
     contentBundles(config),
+
     expressiveCode({
       plugins: [pluginLineNumbers()],
       themes: [
@@ -62,24 +80,45 @@ export default defineConfig({
           ? '[data-theme="dark"]'
           : '[data-theme="light"]',
       useDarkModeMediaQuery: false,
-      defaultProps: { showLineNumbers: config.appearance.showCodeLineNumbers },
-      styleOverrides: { borderRadius: '0.8rem', codeFontSize: '0.875rem' },
+      defaultProps: {
+        showLineNumbers: config.appearance.showCodeLineNumbers,
+      },
+      styleOverrides: {
+        borderRadius: '0.8rem',
+        codeFontSize: '0.875rem',
+      },
     }),
+
     mdx(),
-    icon({ include: { lucide: ['*'], 'simple-icons': ['*'] } }),
+
+    icon({
+      include: {
+        lucide: ['*'],
+        'simple-icons': ['*'],
+      },
+    }),
+
     sitemap({
       filter: (page) => {
         const path = new URL(page).pathname;
+
         if (
           config.site.localePrefixPolicy === 'redirect-to-default' &&
           !hasLocalePrefix(path, config.site)
-        )
+        ) {
           return false;
-        // Individual article visibility is enforced again by build-search.mjs.
+        }
+
+        // Individual article visibility is enforced
+        // again by build-search.mjs.
         return !excludedSitemapPaths.has(path);
       },
     }),
+
     relativeLinks(config.site.baseUrl),
   ],
-  vite: { plugins: [tailwindcss()] },
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
