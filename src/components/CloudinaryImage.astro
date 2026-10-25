@@ -1,0 +1,58 @@
+---
+import { getPictureData, type CloudinaryOptions } from "../lib/cloudinary";
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends Omit<CloudinaryOptions, "format"> {
+  publicId: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  widths?: number[];
+  sizes?: string;
+  loading?: "lazy" | "eager";
+  fetchpriority?: "high" | "low" | "auto";
+  class?: string;
+  pictureClass?: string;
+}
+
+const {
+  publicId,
+  alt,
+  class: className,
+  pictureClass,
+  loading = "lazy",
+  fetchpriority = "auto",
+  ...options
+} = Astro.props;
+const { sources, img } = getPictureData(publicId, options);
+// Forward Astro's scoped-style attributes to the image as well as its wrapper.
+const scope = Object.fromEntries(
+  Object.entries(Astro.props).filter(([key]) => key.startsWith("data-astro-cid-")),
+);
+---
+
+<picture class={pictureClass} {...scope}>
+  {sources.map((source) => (
+    <source {...source} />
+  ))}
+  <img
+    {...(img as HTMLAttributes<"img">)}
+    {...scope}
+    alt={alt}
+    loading={loading}
+    fetchpriority={fetchpriority}
+    decoding="async"
+    class={className}
+  />
+</picture>
+
+<style>
+  picture {
+    display: block;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+</style>

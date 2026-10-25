@@ -8,6 +8,8 @@ tags: ['content', 'i18n']
 image: '/images/covers/getting-started.webp'
 ---
 
+<cloudinary-picture src="assets/images/vincent-yap-55o6N9bVen0-unsplash" cloud-name="paulapplegate-com" alt="Describe this image" width="4729" height="7093" sizes="(max-width: 720px) calc(100vw - 3rem), 672px"></cloudinary-picture>
+
 Articles, standalone pages, categories and tags live in `content/`. Organize them in folders and use frontmatter for titles, addresses and other details.
 
 ## Four content types

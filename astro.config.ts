@@ -14,6 +14,7 @@ import remarkMath from 'remark-math';
 import rehypeMath from './src/plugins/rehype-math';
 import remarkCallouts from './src/plugins/remark-callouts';
 import { unified, type RemarkPlugins } from '@astrojs/markdown-remark';
+import rehypeCloudinaryPicture from "./src/plugins/rehype-cloudinary-picture.mjs";
 
 // Parse TeX even when rendering is disabled so MDX never treats formula braces
 // as JavaScript expressions. Without KaTeX it falls back to source code.

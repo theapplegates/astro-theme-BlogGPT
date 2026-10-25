@@ -117,6 +117,18 @@ button {
 svg {
   flex-shrink: 0;
 }
+ /* Markdown images share the same responsive picture pipeline. */
+.cloudinary-picture {
+  display: block;
+}
+
+.cloudinary-picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
 .theme-icon[data-icon^='lucide:']
   :is(path, circle, rect, line, polyline, polygon, ellipse, g) {
   stroke-width: 1.6;
