@@ -626,5 +626,127 @@
         1920
       ]
     }
+  },
+  "paulapplegate-com/assets/images/The_Title": {
+    "publicId": "assets/images/The_Title",
+    "cloudName": "paulapplegate-com",
+    "width": 3707,
+    "height": 2340,
+    "version": 1791862290,
+    "sizes": "(max-width: 720px) calc(100vw - 3rem), 672px",
+    "widths": {
+      "jxl": [
+        50,
+        961,
+        1481,
+        1920
+      ],
+      "avif": [
+        50,
+        1588,
+        1920
+      ],
+      "webp": [
+        50,
+        917,
+        1414,
+        1675,
+        1920
+      ]
+    }
+  },
+  "paulapplegate-com/assets/images/Mom-me": {
+    "publicId": "assets/images/Mom-me",
+    "cloudName": "paulapplegate-com",
+    "width": 3390,
+    "height": 3852,
+    "version": 1791862263,
+    "sizes": "(max-width: 720px) calc(100vw - 3rem), 672px",
+    "widths": {
+      "jxl": [
+        50,
+        788,
+        1193,
+        1588,
+        1895,
+        1920
+      ],
+      "avif": [
+        50,
+        1537,
+        1920
+      ],
+      "webp": [
+        50,
+        749,
+        1132,
+        1611,
+        1810,
+        1920
+      ]
+    }
+  },
+  "paulapplegate-com/assets/images/Contesttantform": {
+    "publicId": "assets/images/Contesttantform",
+    "cloudName": "paulapplegate-com",
+    "width": 2444,
+    "height": 3120,
+    "version": 1791574579,
+    "sizes": "(max-width: 720px) calc(100vw - 3rem), 672px",
+    "widths": {
+      "jxl": [
+        50,
+        297,
+        428,
+        563,
+        698,
+        820,
+        943,
+        1103,
+        1207,
+        1350,
+        1445,
+        1549,
+        1674,
+        1821,
+        1888,
+        1920
+      ],
+      "avif": [
+        50,
+        307,
+        460,
+        598,
+        743,
+        896,
+        1086,
+        1261,
+        1433,
+        1568,
+        1802,
+        1903,
+        1920
+      ],
+      "webp": [
+        50,
+        292,
+        571,
+        622,
+        699,
+        785,
+        865,
+        949,
+        1023,
+        1116,
+        1200,
+        1288,
+        1362,
+        1450,
+        1533,
+        1622,
+        1899,
+        1920
+      ]
+    }
   }
 }
